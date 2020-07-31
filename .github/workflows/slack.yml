@@ -18,7 +18,7 @@ jobs:
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_CHANNEL: test
-        SLACK_USERNAME: rtCamp
+        SLACK_USERNAME: AutoDeploy
         SLACK_MESSAGE: 'Deploy by +${GITHUB_ACTOR}'
 
 
