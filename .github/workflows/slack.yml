@@ -17,9 +17,15 @@ jobs:
       uses: rtCamp/action-slack-notify@master
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOK}}
         SLACK_CHANNEL: test
         SLACK_USERNAME: AutoDeploy
         SLACK_MESSAGE: ${{GITHUB_ACTOR}}
-
+    - uses: act10ns/slack@v1
+        with:
+          status: ${{ job.status }}
+          steps: ${{ toJson(steps) }}
+          channel: 'test'
+        if: always()            
 
 
