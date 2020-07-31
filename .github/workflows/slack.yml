@@ -16,6 +16,10 @@ jobs:
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@master
       env:
-        SLACK_WEBHOOK: 'https://hooks.slack.com/services/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'
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_CHANNEL: deployment_notifications
+        SLACK_USERNAME: rtCamp
+        SLACK_MESSAGE: 'Deploy by $GITHUB_ACTOR'
+
 
 
